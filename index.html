@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Form to Google Sheets</title>
+  <title>Hello World</title>
   <style>
     body {
       margin: 0;
@@ -34,41 +34,17 @@
       height: 150px;
       border-radius: 50%;
       object-fit: cover;
-      margin: 20px 0;
+      margin-top: 20px;
+      margin-bottom: 20px;
       border: 2px solid #ffffff33;
     }
 
-    form {
-      margin-top: 30px;
-      display: flex;
-      flex-direction: column;
+    iframe {
       width: 100%;
-      max-width: 400px;
-      background-color: #1e1e1e;
-      padding: 20px;
-      border-radius: 8px;
-    }
-
-    input, textarea {
-      background-color: #2a2a2a;
-      color: #fff;
-      border: 1px solid #333;
-      padding: 10px;
-      margin-bottom: 15px;
-      border-radius: 4px;
-      font-size: 1rem;
-    }
-
-    input[type="submit"] {
-      background-color: #03dac6;
-      color: #000;
+      max-width: 600px;
       border: none;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    input[type="submit"]:hover {
-      background-color: #01c5b5;
+      height: 800px;
+      margin-top: 30px;
     }
 
     @media (max-width: 600px) {
@@ -83,42 +59,20 @@
 </head>
 <body>
   <h1>Hello World</h1>
-  <p>My first web page - now connected to Google Sheets!</p>
+  <p>My first web page</p>
 
   <!-- Profile Picture -->
-  <img src="profile.jpg" alt="Photo of Jan Robert Darwin" />
+  <img src="profile.jpg" alt="My Profile Picture" />
 
-  <!-- Contact Form -->
-  <form id="contact-form">
-    <input type="text" name="name" placeholder="Your Name" required />
-    <input type="email" name="email" placeholder="Your Email" required />
-    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-    <input type="submit" value="Send Message" />
-  </form>
-
-  <script>
-  const form = document.getElementById('contact-form');
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbwV3tQFmkUb52gmGYr55lpr_Id4ztu6blqLylI_YmmoDVf07nC8yBDS64ASxIZrjMlOgw/exec';
-
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    
-    const formData = new FormData(form);
-
-    fetch(scriptURL, {
-      method: 'POST',
-      body: formData
-    })
-    .then(response => {
-      alert("✅ Message sent to Google Sheets!");
-      form.reset();
-    })
-    .catch(error => {
-      console.error('Error!', error.message);
-      alert("❌ There was an error. Please try again.");
-    });
-  });
-</script>
-
+  <!-- Google Form Embed -->
+  <iframe 
+    src="https://docs.google.com/forms/d/e/1FAIpQLSfoOX2X6T9gnf3XMQP6-YOUR_FORM_ID/viewform?embedded=true" 
+    frameborder="0" 
+    marginheight="0" 
+    marginwidth="0"
+    loading="lazy"
+    allowfullscreen>
+    Loading…
+  </iframe>
 </body>
 </html>
