@@ -111,7 +111,7 @@
       e.preventDefault();
 
       const formData = new FormData(form);
-      const scriptURL = "https://script.google.com/macros/s/AKfycbzntI7k_h7eJQhbkhcBLf50dYy7PJu05cHT_FgYNQVsbA5L20j7lm1B4hJDQ4HOFrR9-g/exec"; // 🔁 Replace this with your actual Google Apps Script URL
+      const scriptURL = "https://script.google.com/macros/s/AKfycbzxdAEFY__1dcf59kSHV7TkOieteTK2bZdJYF_HexCF9_TS9w5BndZichIMGT_slncyEA/exec"; // 🔁 Replace this with your actual Google Apps Script URL
 
       fetch(scriptURL, { method: "POST", body: formData })
         .then((response) => {
