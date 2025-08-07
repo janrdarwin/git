@@ -90,11 +90,35 @@
   <img src="profile.jpg" alt="My Profile Picture" />
 
   <!-- Contact Form -->
-  <form action="mailto:janrdarwin2@gmail.com" method="POST" enctype="text/plain">
-    <input type="text" name="name" placeholder="Your Name" required />
-    <input type="email" name="email" placeholder="Your Email" required />
-    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-    <input type="submit" value="Send Message" />
-  </form>
+ <form id="contact-form">
+  <input type="text" name="name" placeholder="Your Name" required />
+  <input type="email" name="email" placeholder="Your Email" required />
+  <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+  <input type="submit" value="Send Message" />
+</form>
+
+<script>
+  const form = document.getElementById('contact-form');
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbwV3tQFmkUb52gmGYr55lpr_Id4ztu6blqLylI_YmmoDVf07nC8yBDS64ASxIZrjMlOgw/exec'; // Replace with your copied Apps Script URL
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+
+    const data = {
+      name: form.name.value,
+      email: form.email.value,
+      message: form.message.value
+    };
+
+    fetch(scriptURL, {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: { 'Content-Type': 'application/json' }
+    })
+    .then(response => alert("Message sent to Google Sheets!"))
+    .catch(error => alert("Error!", error.message));
+  });
+</script>
+
 </body>
 </html>
