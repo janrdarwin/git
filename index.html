@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello World</title>
+  <title>Contact Form to Google Sheets</title>
   <style>
     body {
       margin: 0;
@@ -34,8 +34,7 @@
       height: 150px;
       border-radius: 50%;
       object-fit: cover;
-      margin-top: 20px;
-      margin-bottom: 20px;
+      margin: 20px 0;
       border: 2px solid #ffffff33;
     }
 
@@ -84,41 +83,48 @@
 </head>
 <body>
   <h1>Hello World</h1>
-  <p>My first web page</p>
+  <p>My first web page - now connected to Google Sheets!</p>
 
   <!-- Profile Picture -->
-  <img src="profile.jpg" alt="My Profile Picture" />
+  <img src="profile.jpg" alt="Photo of Jan Robert Darwin" />
 
   <!-- Contact Form -->
- <form id="contact-form">
-  <input type="text" name="name" placeholder="Your Name" required />
-  <input type="email" name="email" placeholder="Your Email" required />
-  <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-  <input type="submit" value="Send Message" />
-</form>
+  <form id="contact-form">
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Your Email" required />
+    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+    <input type="submit" value="Send Message" />
+  </form>
 
-<script>
-  const form = document.getElementById('contact-form');
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbwV3tQFmkUb52gmGYr55lpr_Id4ztu6blqLylI_YmmoDVf07nC8yBDS64ASxIZrjMlOgw/exec'; // Replace with your copied Apps Script URL
+  <script>
+    const form = document.getElementById('contact-form');
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwV3tQFmkUb52gmGYr55lpr_Id4ztu6blqLylI_YmmoDVf07nC8yBDS64ASxIZrjMlOgw/exec';
 
-  form.addEventListener('submit', e => {
-    e.preventDefault();
+    form.addEventListener('submit', e => {
+      e.preventDefault();
 
-    const data = {
-      name: form.name.value,
-      email: form.email.value,
-      message: form.message.value
-    };
+      const data = {
+        name: form.name.value,
+        email: form.email.value,
+        message: form.message.value
+      };
 
-    fetch(scriptURL, {
-      method: 'POST',
-      body: JSON.stringify(data),
-      headers: { 'Content-Type': 'application/json' }
-    })
-    .then(response => alert("Message sent to Google Sheets!"))
-    .catch(error => alert("Error!", error.message));
-  });
-</script>
-
+      fetch(scriptURL, {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+      .then(response => {
+        alert("✅ Message sent to Google Sheets!");
+        form.reset();
+      })
+      .catch(error => {
+        console.error('Error!', error.message);
+        alert("❌ There was an error. Please try again.");
+      });
+    });
+  </script>
 </body>
 </html>
