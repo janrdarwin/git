@@ -1,53 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Contact Us</title>
-  <link rel="stylesheet" href="assets/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Contact Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f8f9fa;
+        }
+        header {
+            background: #007BFF;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            position: relative;
+        }
+        header a {
+            position: absolute;
+            left: 15px;
+            top: 15px;
+            color: white;
+            text-decoration: none;
+            background: #0056b3;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        header a:hover {
+            background: #003d80;
+        }
+        iframe {
+            display: block;
+            margin: 0 auto;
+            border: none;
+        }
+    </style>
 </head>
 <body>
-  <h1>Contact Us</h1>
-  <form id="contactForm">
-    <label>Name:</label><br>
-    <input type="text" name="name" required><br><br>
+    <header>
+        <a href="index.html">← Back</a>
+        <h1>Contact Us</h1>
+    </header>
 
-    <label>Email:</label><br>
-    <input type="email" name="email" required><br><br>
-
-    <label>Address:</label><br>
-    <input type="text" name="address"><br><br>
-
-    <label>Phone Number:</label><br>
-    <input type="tel" name="phone"><br><br>
-
-    <label>Comments:</label><br>
-    <textarea name="comments"></textarea><br><br>
-
-    <button type="submit">Submit</button>
-  </form>
-
-  <p id="result"></p>
-
-  <script>
-    const scriptURL = 'YOUR_GOOGLE_APPS_SCRIPT_WEBAPP_URL'; // Replace with your Apps Script Web App URL
-    const form = document.getElementById('contactForm');
-    const result = document.getElementById('result');
-
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      fetch(scriptURL, {
-        method: 'POST',
-        body: new FormData(form)
-      })
-      .then(response => {
-        result.innerHTML = "Thank you! Your message has been sent.";
-        form.reset();
-      })
-      .catch(error => {
-        result.innerHTML = "Error! Please try again.";
-        console.error('Error!', error.message);
-      });
-    });
-  </script>
+    <!-- Replace with your Google Form embed link -->
+    <iframe 
+        src="https://docs.google.com/forms/d/e/1FAIpQLSeXI2dhpuTMLSLrMxgYr46Nc2lwwwSbTxx4XfT4nujWhL6Lxg/viewform?usp=header" 
+        width="100%" 
+        height="800" 
+        frameborder="0" 
+        marginheight="0" 
+        marginwidth="0">
+        Loading…
+    </iframe>
 </body>
 </html>
