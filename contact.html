@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <h1>Contact Us</h1>
+  <form id="contactForm">
+    <label>Name:</label><br>
+    <input type="text" name="name" required><br><br>
+
+    <label>Email:</label><br>
+    <input type="email" name="email" required><br><br>
+
+    <label>Address:</label><br>
+    <input type="text" name="address"><br><br>
+
+    <label>Phone Number:</label><br>
+    <input type="tel" name="phone"><br><br>
+
+    <label>Comments:</label><br>
+    <textarea name="comments"></textarea><br><br>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <p id="result"></p>
+
+  <script>
+    const scriptURL = 'YOUR_GOOGLE_APPS_SCRIPT_WEBAPP_URL'; // Replace with your Apps Script Web App URL
+    const form = document.getElementById('contactForm');
+    const result = document.getElementById('result');
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      fetch(scriptURL, {
+        method: 'POST',
+        body: new FormData(form)
+      })
+      .then(response => {
+        result.innerHTML = "Thank you! Your message has been sent.";
+        form.reset();
+      })
+      .catch(error => {
+        result.innerHTML = "Error! Please try again.";
+        console.error('Error!', error.message);
+      });
+    });
+  </script>
+</body>
+</html>
