@@ -1,60 +1,72 @@
-/* Reset & Base */
+/* General Styles */
 body {
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
-  background-color: #121212;
-  color: #fff;
+  background: #f8f9fa;
+  color: #333;
 }
 
-/* Intro section */
-.intro {
-  padding: 50px 20px;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* Header */
+header {
+  background: #007BFF;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  position: relative;
 }
 
-.intro-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
-  max-width: 900px;
-}
-
-.intro-content img {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.intro-content div {
-  max-width: 500px;
-}
-
-.btn {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #03dac6;
-  color: #000;
-  border-radius: 5px;
+header a {
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  color: white;
   text-decoration: none;
-  font-weight: bold;
-  margin-top: 15px;
+  background: #0056b3;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 14px;
 }
 
-.btn:hover {
-  background-color: #01c5b5;
+header a:hover {
+  background: #003d80;
 }
 
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-  .intro-content {
-    flex-direction: column;
-    text-align: center;
+/* Forms & iframes */
+iframe {
+  display: block;
+  margin: 0 auto;
+  border: none;
+}
+
+/* Index Page Styling */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.profile-img {
+  max-width: 200px;
+  width: 100%;
+  border-radius: 50%;
+}
+
+h1 {
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* Mobile-friendly adjustments */
+@media (min-width: 768px) {
+  .main-container {
+    flex-direction: row;
+    justify-content: center;
+    text-align: left;
+  }
+
+  .main-container img {
+    margin-right: 20px;
   }
 }
