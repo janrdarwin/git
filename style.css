@@ -1,15 +1,20 @@
 /* style.css */
 
-/* General body style */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #121212; /* match your main site dark theme */
-  color: #ffffff;
+/* General reset & base styles */
+* {
+  box-sizing: border-box;
 }
 
-/* Header styles (used in contact page) */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #121212;
+  color: #ffffff;
+  line-height: 1.5;
+}
+
+/* Header styles */
 header {
   background: #007BFF;
   color: white;
@@ -34,40 +39,37 @@ header a:hover {
   background: #003d80;
 }
 
-/* iframe form style */
-iframe {
-  display: block;
-  margin: 0 auto;
-  border: none;
-}
-
-/* Existing home/contact form styles from earlier */
+/* Headings and text */
 h1 {
   font-size: 2.5rem;
-  margin-bottom: 10px;
+  margin: 10px 0;
+  text-align: center;
 }
 
 p {
   font-size: 1.2rem;
   text-align: center;
   max-width: 600px;
+  margin: auto;
 }
 
+/* Profile image */
 img {
   width: 150px;
   height: 150px;
   border-radius: 50%;
   object-fit: cover;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  display: block;
+  margin: 20px auto;
   border: 2px solid #ffffff33;
 }
 
+/* Contact form */
 form {
-  margin-top: 30px;
+  margin: 30px auto;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 90%;
   max-width: 400px;
   background-color: #1e1e1e;
   padding: 20px;
@@ -97,11 +99,48 @@ input[type="submit"]:hover {
   background-color: #01c5b5;
 }
 
+/* Iframe for Google Form */
+iframe {
+  display: block;
+  margin: 0 auto;
+  border: none;
+  width: 100%;
+  max-width: 900px;
+}
+
+/* Mobile adjustments */
 @media (max-width: 600px) {
+  header {
+    padding: 10px;
+  }
+
+  header a {
+    position: static;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+
   h1 {
     font-size: 2rem;
   }
+
   p {
     font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  img {
+    width: 120px;
+    height: 120px;
+  }
+
+  form {
+    width: 95%;
+    padding: 15px;
+  }
+
+  input,
+  textarea {
+    font-size: 0.9rem;
   }
 }
