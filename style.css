@@ -47,27 +47,6 @@ body {
   color: #0073e6;
 }
 
-.projects {
-  list-style: none;
-  padding: 0;
-  margin: 20px 0;
-  text-align: left;
-}
-
-.projects li {
-  margin: 10px 0;
-}
-
-.projects a {
-  font-weight: bold;
-  color: #0073e6;
-  text-decoration: none;
-}
-
-.projects a:hover {
-  text-decoration: underline;
-}
-
 footer {
   margin-top: 20px;
   font-size: 14px;
@@ -86,9 +65,6 @@ footer {
   }
   .social-links a {
     color: #eee;
-  }
-  .projects a {
-    color: #4da3ff;
   }
   footer {
     color: #aaa;
