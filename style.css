@@ -1,3 +1,4 @@
+/* --- Base Styles --- */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -14,13 +15,15 @@ body {
 .container {
   text-align: center;
   max-width: 600px;
+  width: 90%;
   padding: 20px;
   background: white;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
 }
 
-/* Sections with stylish divider */
+/* --- Sections & Dividers --- */
 section {
   margin-bottom: 40px;
   padding-bottom: 30px;
@@ -37,11 +40,13 @@ section:not(:last-child)::after {
   border-radius: 2px;
 }
 
+/* --- Profile Section --- */
 .profile-img {
   width: 150px;
   height: 150px;
   border-radius: 50%;
   margin-bottom: 20px;
+  object-fit: cover;
 }
 
 .bio {
@@ -57,89 +62,56 @@ section:not(:last-child)::after {
   margin: 0 10px;
   font-size: 24px;
   color: #333;
-  transition: color 0.3s;
+  transition: color 0.3s, transform 0.2s;
+  display: inline-block;
 }
 
 .social-links a:hover {
   color: #0073e6;
+  transform: translateY(-3px);
 }
 
-.projects-link {
-  margin-top: 20px;
+/* --- Improved Blog Section --- */
+.blog-card {
+  background: linear-gradient(135deg, #0073aa, #00aadc);
+  border-radius: 15px;
+  padding: 30px;
+  color: white;
   text-align: center;
+  box-shadow: 0 10px 20px rgba(0, 115, 170, 0.2);
+  transition: transform 0.3s ease;
 }
 
-.projects-link .btn {
+.blog-card:hover {
+  transform: translateY(-5px);
+}
+
+.btn-blog {
   display: inline-block;
-  padding: 12px 24px;
-  background: #333;
-  color: #fff;
-  border-radius: 10px;
+  margin-top: 15px;
+  padding: 10px 25px;
+  background: white;
+  color: #0073aa;
+  border-radius: 25px;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: bold;
   transition: all 0.3s ease;
 }
 
-.projects-link .btn:hover {
-  background: #555;
-  transform: scale(1.05);
+.btn-blog:hover {
+  padding: 10px 35px;
+  background: #f0f0f0;
 }
 
-/* InfinityFree section */
-.inf-section {
-  margin-top: 20px;
-  text-align: left;
-  font-size: 15px;
-  line-height: 1.6;
-}
-
-.inf-section h2 {
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-footer {
-  margin-top: 20px;
-  font-size: 14px;
-  color: #555;
-}
-
-/* Dark mode otomatis mengikuti sistem */
-@media (prefers-color-scheme: dark) {
-  /* ... your existing dark mode code ... */
-
-  #pi-services {
-    border-top: 1px solid #333;
-  }
-
-  .service-card {
-    background: #2a2a2a;
-    border-color: #444;
-    color: #eee;
-  }
-
-  .service-card i {
-    color: #aaa;
-  }
-
-  .service-card:hover {
-    background: #333;
-    border-color: #c51a4a;
-    /* Keeps the Pi Pink highlight */
-  }
-}
-
+/* --- Raspberry Pi Dashboard --- */
 #pi-services {
-  margin-top: 40px;
-  padding-top: 20px;
-  border-top: 1px solid #eee;
+  margin-top: 20px;
 }
 
 #pi-services h2 {
   font-size: 1.2rem;
   margin-bottom: 20px;
   color: #c51a4a;
-  /* Raspberry Pi Pink */
 }
 
 .services-grid {
@@ -165,6 +137,7 @@ footer {
   font-size: 24px;
   margin-bottom: 8px;
   color: #555;
+  transition: color 0.3s, transform 0.3s;
 }
 
 .service-card:hover {
@@ -176,4 +149,219 @@ footer {
 
 .service-card:hover i {
   color: #c51a4a;
+  transform: scale(1.1);
+}
+
+/* --- Dark Mode (Auto) --- */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #121212;
+    color: #eee;
+  }
+
+  .container {
+    background: #1e1e1e;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  }
+
+  .social-links a {
+    color: #bbb;
+  }
+
+  .service-card {
+    background: #2a2a2a;
+    border-color: #444;
+    color: #eee;
+  }
+
+  .service-card i {
+    color: #aaa;
+  }
+
+  .blog-card {
+    background: linear-gradient(135deg, #005a87, #0073aa);
+  }
+}/* --- Base Styles --- */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f4f4f4;
+  color: #333;
+  transition: background 0.3s, color 0.3s;
+}
+
+.container {
+  text-align: center;
+  max-width: 600px;
+  width: 90%;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
+}
+
+/* --- Sections & Dividers --- */
+section {
+  margin-bottom: 40px;
+  padding-bottom: 30px;
+  position: relative;
+}
+
+section:not(:last-child)::after {
+  content: "";
+  display: block;
+  height: 3px;
+  margin: 30px auto 0;
+  width: 60%;
+  background: linear-gradient(to right, #0073e6, #00c6ff);
+  border-radius: 2px;
+}
+
+/* --- Profile Section --- */
+.profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  object-fit: cover;
+}
+
+.bio {
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.social-links {
+  margin: 20px 0;
+}
+
+.social-links a {
+  margin: 0 10px;
+  font-size: 24px;
+  color: #333;
+  transition: color 0.3s, transform 0.2s;
+  display: inline-block;
+}
+
+.social-links a:hover {
+  color: #0073e6;
+  transform: translateY(-3px);
+}
+
+/* --- Improved Blog Section --- */
+.blog-card {
+  background: linear-gradient(135deg, #0073aa, #00aadc);
+  border-radius: 15px;
+  padding: 30px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(0, 115, 170, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+}
+
+.btn-blog {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 25px;
+  background: white;
+  color: #0073aa;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.btn-blog:hover {
+  padding: 10px 35px;
+  background: #f0f0f0;
+}
+
+/* --- Raspberry Pi Dashboard --- */
+#pi-services {
+  margin-top: 20px;
+}
+
+#pi-services h2 {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #c51a4a;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 15px;
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #333;
+  transition: all 0.3s ease;
+  border: 1px solid #ddd;
+}
+
+.service-card i {
+  font-size: 24px;
+  margin-bottom: 8px;
+  color: #555;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.service-card:hover {
+  background: #fff;
+  border-color: #c51a4a;
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.service-card:hover i {
+  color: #c51a4a;
+  transform: scale(1.1);
+}
+
+/* --- Dark Mode (Auto) --- */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #121212;
+    color: #eee;
+  }
+
+  .container {
+    background: #1e1e1e;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  }
+
+  .social-links a {
+    color: #bbb;
+  }
+
+  .service-card {
+    background: #2a2a2a;
+    border-color: #444;
+    color: #eee;
+  }
+
+  .service-card i {
+    color: #aaa;
+  }
+
+  .blog-card {
+    background: linear-gradient(135deg, #005a87, #0073aa);
+  }
 }
