@@ -131,3 +131,50 @@ footer {
     background: linear-gradient(to right, #00c6ff, #0073e6); /* flipped gradient for dark mode */
   }
 }
+#pi-services {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+#pi-services h2 {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #c51a4a; /* Raspberry Pi Pink */
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 15px;
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #333;
+  transition: all 0.3s ease;
+  border: 1px solid #ddd;
+}
+
+.service-card i {
+  font-size: 24px;
+  margin-bottom: 8px;
+  color: #555;
+}
+
+.service-card:hover {
+  background: #fff;
+  border-color: #c51a4a;
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.service-card:hover i {
+  color: #c51a4a;
+}
