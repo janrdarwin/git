@@ -106,31 +106,29 @@ footer {
 
 /* Dark mode otomatis mengikuti sistem */
 @media (prefers-color-scheme: dark) {
-  body {
-    background: #121212;
+  /* ... your existing dark mode code ... */
+
+  #pi-services {
+    border-top: 1px solid #333;
+  }
+
+  .service-card {
+    background: #2a2a2a;
+    border-color: #444;
     color: #eee;
   }
-  .container {
-    background: #1e1e1e;
-    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
-  }
-  .social-links a {
-    color: #eee;
-  }
-  .projects-link .btn {
-    background: #eee;
-    color: #121212;
-  }
-  .projects-link .btn:hover {
-    background: #ccc;
-  }
-  footer {
+
+  .service-card i {
     color: #aaa;
   }
-  section:not(:last-child)::after {
-    background: linear-gradient(to right, #00c6ff, #0073e6); /* flipped gradient for dark mode */
+
+  .service-card:hover {
+    background: #333;
+    border-color: #c51a4a;
+    /* Keeps the Pi Pink highlight */
   }
 }
+
 #pi-services {
   margin-top: 40px;
   padding-top: 20px;
@@ -140,7 +138,8 @@ footer {
 #pi-services h2 {
   font-size: 1.2rem;
   margin-bottom: 20px;
-  color: #c51a4a; /* Raspberry Pi Pink */
+  color: #c51a4a;
+  /* Raspberry Pi Pink */
 }
 
 .services-grid {
@@ -172,7 +171,7 @@ footer {
   background: #fff;
   border-color: #c51a4a;
   transform: translateY(-5px);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .service-card:hover i {
