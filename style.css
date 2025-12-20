@@ -103,55 +103,6 @@ section:not(:last-child)::after {
   background: #f0f0f0;
 }
 
-/* --- Raspberry Pi Dashboard --- */
-#pi-services {
-  margin-top: 20px;
-}
-
-#pi-services h2 {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
-  color: #c51a4a;
-}
-
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 15px;
-}
-
-.service-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 15px;
-  background: #f9f9f9;
-  border-radius: 8px;
-  text-decoration: none;
-  color: #333;
-  transition: all 0.3s ease;
-  border: 1px solid #ddd;
-}
-
-.service-card i {
-  font-size: 24px;
-  margin-bottom: 8px;
-  color: #555;
-  transition: color 0.3s, transform 0.3s;
-}
-
-.service-card:hover {
-  background: #fff;
-  border-color: #c51a4a;
-  transform: translateY(-5px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.service-card:hover i {
-  color: #c51a4a;
-  transform: scale(1.1);
-}
-
 /* --- Dark Mode (Auto) --- */
 @media (prefers-color-scheme: dark) {
   body {
