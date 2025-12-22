@@ -1,4 +1,4 @@
-/* --- Base Styles --- */
+/* --- Core Styles --- */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -14,55 +14,45 @@ body {
 
 .container {
   text-align: center;
-  max-width: 600px;
+  max-width: 500px;
   width: 90%;
-  padding: 20px;
+  padding: 30px;
   background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   margin: 20px 0;
 }
 
-/* --- Sections & Dividers --- */
 section {
-  margin-bottom: 40px;
-  padding-bottom: 30px;
-  position: relative;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
 }
 
 section:not(:last-child)::after {
   content: "";
   display: block;
   height: 3px;
-  margin: 30px auto 0;
-  width: 60%;
+  margin: 25px auto 0;
+  width: 50%;
   background: linear-gradient(to right, #0073e6, #00c6ff);
   border-radius: 2px;
 }
 
-/* --- Profile Section --- */
+/* --- Profile & Links --- */
 .profile-img {
-  width: 150px;
-  height: 150px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   object-fit: cover;
-}
-
-.bio {
-  margin-bottom: 20px;
-  line-height: 1.6;
-}
-
-.social-links {
-  margin: 20px 0;
+  border: 3px solid #0073e6;
 }
 
 .social-links a {
-  margin: 0 10px;
-  font-size: 24px;
-  color: #333;
-  transition: color 0.3s, transform 0.2s;
+  margin: 0 8px;
+  font-size: 22px;
+  color: #555;
+  transition: all 0.3s ease;
   display: inline-block;
 }
 
@@ -71,248 +61,59 @@ section:not(:last-child)::after {
   transform: translateY(-3px);
 }
 
-/* --- Improved Blog Section --- */
-.blog-card {
-  background: linear-gradient(135deg, #0073aa, #00aadc);
-  border-radius: 15px;
-  padding: 30px;
-  color: white;
-  text-align: center;
-  box-shadow: 0 10px 20px rgba(0, 115, 170, 0.2);
-  transition: transform 0.3s ease;
-}
-
-.blog-card:hover {
-  transform: translateY(-5px);
-}
-
-.btn-blog {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 10px 25px;
-  background: white;
-  color: #0073aa;
-  border-radius: 25px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: all 0.3s ease;
-}
-
-.btn-blog:hover {
-  padding: 10px 35px;
-  background: #f0f0f0;
-}
-
-/* --- Dark Mode (Auto) --- */
-@media (prefers-color-scheme: dark) {
-  body {
-    background: #121212;
-    color: #eee;
-  }
-
-  .container {
-    background: #1e1e1e;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-  }
-
-  .social-links a {
-    color: #bbb;
-  }
-
-  .service-card {
-    background: #2a2a2a;
-    border-color: #444;
-    color: #eee;
-  }
-
-  .service-card i {
-    color: #aaa;
-  }
-
-  .blog-card {
-    background: linear-gradient(135deg, #005a87, #0073aa);
-  }
-}/* --- Base Styles --- */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background: #f4f4f4;
-  color: #333;
-  transition: background 0.3s, color 0.3s;
-}
-
-.container {
-  text-align: center;
-  max-width: 600px;
-  width: 90%;
-  padding: 20px;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  margin: 20px 0;
-}
-
-/* --- Sections & Dividers --- */
-section {
-  margin-bottom: 40px;
-  padding-bottom: 30px;
-  position: relative;
-}
-
-section:not(:last-child)::after {
-  content: "";
-  display: block;
-  height: 3px;
-  margin: 30px auto 0;
-  width: 60%;
-  background: linear-gradient(to right, #0073e6, #00c6ff);
-  border-radius: 2px;
-}
-
-/* --- Profile Section --- */
-.profile-img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  margin-bottom: 20px;
-  object-fit: cover;
-}
-
-.bio {
-  margin-bottom: 20px;
-  line-height: 1.6;
-}
-
-.social-links {
-  margin: 20px 0;
-}
-
-.social-links a {
-  margin: 0 10px;
-  font-size: 24px;
-  color: #333;
-  transition: color 0.3s, transform 0.2s;
-  display: inline-block;
-}
-
-.social-links a:hover {
-  color: #0073e6;
-  transform: translateY(-3px);
-}
-
-/* --- Improved Blog Section --- */
-.blog-card {
-  background: linear-gradient(135deg, #0073aa, #00aadc);
-  border-radius: 15px;
-  padding: 30px;
-  color: white;
-  text-align: center;
-  box-shadow: 0 10px 20px rgba(0, 115, 170, 0.2);
-  transition: transform 0.3s ease;
-}
-
-.blog-card:hover {
-  transform: translateY(-5px);
-}
-
-.btn-blog {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 10px 25px;
-  background: white;
-  color: #0073aa;
-  border-radius: 25px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: all 0.3s ease;
-}
-
-.btn-blog:hover {
-  padding: 10px 35px;
-  background: #f0f0f0;
-}
-
-/* --- Raspberry Pi Dashboard --- */
-#pi-services {
-  margin-top: 20px;
-}
-
-#pi-services h2 {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
-  color: #c51a4a;
-}
-
+/* --- Home Lab Grid --- */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 15px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
 }
 
 .service-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   padding: 15px;
   background: #f9f9f9;
-  border-radius: 8px;
-  text-decoration: none;
-  color: #333;
-  transition: all 0.3s ease;
-  border: 1px solid #ddd;
+  border-radius: 12px;
+  border: 1px solid #eee;
+  font-size: 0.85rem;
+  transition: all 0.3s;
 }
 
 .service-card i {
-  font-size: 24px;
-  margin-bottom: 8px;
-  color: #555;
-  transition: color 0.3s, transform 0.3s;
+  display: block;
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+  color: #0073e6;
 }
 
-.service-card:hover {
-  background: #fff;
-  border-color: #c51a4a;
-  transform: translateY(-5px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+/* --- Blog Card --- */
+.blog-card {
+  background: linear-gradient(135deg, #0073aa, #00aadc);
+  border-radius: 15px;
+  padding: 25px;
+  color: white;
 }
 
-.service-card:hover i {
-  color: #c51a4a;
-  transform: scale(1.1);
+.btn-blog {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 8px 20px;
+  background: white;
+  color: #0073aa;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
 }
 
-/* --- Dark Mode (Auto) --- */
+.btn-blog:hover {
+  transform: scale(1.05);
+  background: #f0f0f0;
+}
+
+/* --- Unified Dark Mode --- */
 @media (prefers-color-scheme: dark) {
-  body {
-    background: #121212;
-    color: #eee;
-  }
-
-  .container {
-    background: #1e1e1e;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-  }
-
-  .social-links a {
-    color: #bbb;
-  }
-
-  .service-card {
-    background: #2a2a2a;
-    border-color: #444;
-    color: #eee;
-  }
-
-  .service-card i {
-    color: #aaa;
-  }
-
-  .blog-card {
-    background: linear-gradient(135deg, #005a87, #0073aa);
-  }
+  body { background: #121212; color: #eee; }
+  .container { background: #1e1e1e; box-shadow: 0 4px 20px rgba(0,0,0,0.4); }
+  .social-links a { color: #bbb; }
+  .service-card { background: #2a2a2a; border-color: #333; color: #eee; }
+  .blog-card { background: linear-gradient(135deg, #005a87, #0073aa); }
 }
