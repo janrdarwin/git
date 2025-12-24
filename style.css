@@ -1,119 +1,101 @@
-/* --- Core Styles --- */
+/* --- Variables & Reset --- */
+:root {
+  --primary: #0073e6;
+  --primary-dark: #005a87;
+  --bg-light: #f4f4f4;
+  --bg-dark: #121212;
+  --card-light: #ffffff;
+  --card-dark: #1e1e1e;
+  --text-light: #333;
+  --text-dark: #eee;
+}
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
   margin: 0;
-  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: #f4f4f4;
-  color: #333;
-  transition: background 0.3s, color 0.3s;
+  background: var(--bg-light);
+  color: var(--text-light);
+  transition: 0.3s ease;
 }
 
 .container {
   text-align: center;
-  max-width: 500px;
+  max-width: 450px;
   width: 90%;
-  padding: 30px;
-  background: white;
-  border-radius: 20px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  margin: 20px 0;
+  padding: 40px;
+  background: var(--card-light);
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
-section {
-  margin-bottom: 30px;
-  padding-bottom: 20px;
-}
-
-section:not(:last-child)::after {
-  content: "";
-  display: block;
-  height: 3px;
-  margin: 25px auto 0;
-  width: 50%;
-  background: linear-gradient(to right, #0073e6, #00c6ff);
-  border-radius: 2px;
-}
-
-/* --- Profile & Links --- */
+/* --- Profile --- */
 .profile-img {
-  width: 120px;
-  height: 120px;
+  width: 110px;
+  height: 110px;
   border-radius: 50%;
-  margin-bottom: 15px;
+  border: 3px solid var(--primary);
   object-fit: cover;
-  border: 3px solid #0073e6;
+  margin-bottom: 20px;
 }
 
+h1 { margin: 10px 0; font-size: 1.8rem; }
+.bio { line-height: 1.6; color: #666; font-size: 0.95rem; margin-bottom: 25px; }
+
+/* --- Links --- */
 .social-links a {
-  margin: 0 8px;
-  font-size: 22px;
+  margin: 0 10px;
+  font-size: 1.4rem;
   color: #555;
-  transition: all 0.3s ease;
-  display: inline-block;
+  transition: 0.3s;
+  text-decoration: none;
 }
 
 .social-links a:hover {
-  color: #0073e6;
+  color: var(--primary);
   transform: translateY(-3px);
 }
 
-/* --- Home Lab Grid --- */
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+/* --- Blog Section --- */
+#blog-feature {
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 1px solid #eee;
 }
 
-.service-card {
-  padding: 15px;
-  background: #f9f9f9;
-  border-radius: 12px;
-  border: 1px solid #eee;
-  font-size: 0.85rem;
-  transition: all 0.3s;
-}
-
-.service-card i {
-  display: block;
-  font-size: 1.5rem;
-  margin-bottom: 5px;
-  color: #0073e6;
-}
-
-/* --- Blog Card --- */
 .blog-card {
-  background: linear-gradient(135deg, #0073aa, #00aadc);
-  border-radius: 15px;
-  padding: 25px;
+  background: linear-gradient(135deg, var(--primary), #00c6ff);
+  border-radius: 16px;
+  padding: 20px;
   color: white;
 }
 
+.blog-icon { font-size: 2rem; margin-bottom: 10px; }
+
 .btn-blog {
   display: inline-block;
-  margin-top: 15px;
-  padding: 8px 20px;
+  margin-top: 12px;
+  padding: 10px 24px;
   background: white;
-  color: #0073aa;
-  border-radius: 20px;
+  color: var(--primary);
+  border-radius: 30px;
   text-decoration: none;
   font-weight: bold;
+  font-size: 0.9rem;
   transition: 0.3s;
 }
 
-.btn-blog:hover {
-  transform: scale(1.05);
-  background: #f0f0f0;
-}
+.btn-blog:hover { transform: scale(1.05); }
 
-/* --- Unified Dark Mode --- */
+/* --- Dark Mode --- */
 @media (prefers-color-scheme: dark) {
-  body { background: #121212; color: #eee; }
-  .container { background: #1e1e1e; box-shadow: 0 4px 20px rgba(0,0,0,0.4); }
+  body { background: var(--bg-dark); color: var(--text-dark); }
+  .container { background: var(--card-dark); box-shadow: 0 10px 40px rgba(0,0,0,0.3); }
+  .bio { color: #bbb; }
   .social-links a { color: #bbb; }
-  .service-card { background: #2a2a2a; border-color: #333; color: #eee; }
-  .blog-card { background: linear-gradient(135deg, #005a87, #0073aa); }
+  #blog-feature { border-top-color: #333; }
+  .blog-card { background: linear-gradient(135deg, var(--primary-dark), var(--primary)); }
 }
